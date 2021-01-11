@@ -19,6 +19,7 @@
         <ul>
             <li>get:hello => hello world</li>
             <li>get:user => authenticated user</li>
+            <li>get:userone => first user</li>
             <li>get:users => paginated users</li>
         </ul>
         <h3>sample taoken</h3>
