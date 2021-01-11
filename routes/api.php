@@ -37,7 +37,7 @@ $router->post('users', function (){
 
 $router->put('users/{user}', function ($user){
     $user = User::findOrFail($user);
-    request()->vlidate({
+    request()->vlidate([
         'national_id' => 'required',
         'name' => 'required',
         'family' => 'required',
@@ -45,6 +45,6 @@ $router->put('users/{user}', function ($user){
         'school_id' => 'required',
         'gender' => 'required',
         'token' => 'required',
-    });
+    ]);
     return $user->update(request()->all());
 });
