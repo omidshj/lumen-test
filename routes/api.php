@@ -23,7 +23,7 @@ $router->get('tehran', function (){
 });
 
 $router->post('users', function (){
-    request()->vlidate([
+    request()->validate([
         'national_id' => 'required',
         'name' => 'required',
         'family' => 'required',
@@ -37,7 +37,7 @@ $router->post('users', function (){
 
 $router->put('users/{user}', function ($user){
     $user = User::findOrFail($user);
-    request()->vlidate([
+    request()->validate([
         'national_id' => 'required',
         'name' => 'required',
         'family' => 'required',
