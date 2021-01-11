@@ -15,14 +15,14 @@ class DatabaseSeeder extends Seeder
     {
         $userCount = intval(env('USER_COUNT', 1000000));
 
-        for($i=0; $i < intdiv($userCount, 10000); $i++) {
+        for($i=0; $i < intdiv($userCount, 1000); $i++) {
             User::insert(
-                User::factory(10000)->make()->toArray()
+                User::factory(1000)->make()->toArray()
             );
         }
 
         User::insert(
-            User::factory($userCount % 10000)->make()->toArray()
+            User::factory($userCount % 1000)->make()->toArray()
         );
     }
 }

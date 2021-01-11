@@ -25,7 +25,7 @@ class UserFactory extends Factory
             'national_id' => rand(1000000000, 9999999999),
             'name' => $this->faker->name,
             'family' => $this->faker->name,
-            'city_id' => rand(1, 5000),
+            'city_id' => rand(1, 200),
             'school_id' => rand(1, 5000),
             'gender' => rand(0, 1),
             'token' => Str::random(60),

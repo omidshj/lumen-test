@@ -21,6 +21,7 @@
             <li>get:user => authenticated user</li>
             <li>get:userone => first user</li>
             <li>get:users => paginated users</li>
+            <li>get:tehran => tehran user</li>
         </ul>
         <h3>sample taoken</h3>
         <ul>
