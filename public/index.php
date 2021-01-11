@@ -10,8 +10,23 @@
 | is ready to receive HTTP / Console requests from the environment.
 |
 */
-
-$app = require __DIR__.'/../bootstrap/app.php';
+switch (explode('/', $_SERVER['REQUEST_URI'])[1] ?? null) {
+    case 'simple':
+        $app = require __DIR__.'/../bootstrap/simple.php';
+        break;
+    case 'facade':
+        $app = require __DIR__.'/../bootstrap/facade.php';
+        break;
+    case 'auth':
+        $app = require __DIR__.'/../bootstrap/auth.php';
+        break;
+    case 'authfacade':
+        $app = require __DIR__.'/../bootstrap/authfacade.php';
+        break;
+    default:
+        $app = require __DIR__.'/../bootstrap/app.php';
+        break;
+}
 
 /*
 |--------------------------------------------------------------------------

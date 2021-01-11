@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
-
+use Illuminate\Support\Str;
 class UserFactory extends Factory
 {
     /**
@@ -27,7 +27,8 @@ class UserFactory extends Factory
             'family' => $this->faker->name,
             'city_id' => rand(1, 5000),
             'school_id' => rand(1, 5000),
-            'gender' => rand(0, 1)
+            'gender' => rand(0, 1),
+            'token' => Str::random(60),
         ];
     }
 }

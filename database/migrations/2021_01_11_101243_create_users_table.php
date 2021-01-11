@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->integer('city_id');
             $table->integer('school_id');
             $table->boolean('gender');
+            $table->string('token');
         });
     }
 
