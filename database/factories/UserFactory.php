@@ -22,8 +22,12 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
+            'national_id' => rand(1000000000, 9999999999),
             'name' => $this->faker->name,
-            'email' => $this->faker->unique()->safeEmail,
+            'family' => $this->faker->name,
+            'city_id' => rand(1, 5000),
+            'school_id' => rand(1, 5000),
+            'gender' => rand(0, 1)
         ];
     }
 }

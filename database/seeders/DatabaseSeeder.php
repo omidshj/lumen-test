@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Illuminate\Database\Seeder;
-
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -13,6 +13,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call('UsersTableSeeder');
+        $userCount = intval(env('USER_COUNT', 1000000));
+
+        for($i=0; $i < intdiv($userCount, 10000); $i++) {
+            User::insert(
+                User::factory(10000)->make()->toArray()
+            );
+        }
+
+        User::insert(
+            User::factory($userCount % 10000)->make()->toArray()
+        );
     }
 }
